@@ -264,6 +264,28 @@ cardinfo.className ='details';
     }else{
         cloth.appendChild(cardParent)
     }
+    
+    
+    productList.forEach(function(val){
+  const productBox = document.getElementById('product-box');
+  const cloth = document.getElementById('cloth-box');
+
+  let newHtml = `<div class="card">
+  <img src=${val.preview}>
+  <div class="details">
+      <h1>${val.name}</h1>
+      <h2>${val.name}</h2>
+      <p>${val.price}</p>
+  </div>
+</div>`
+  console.log('hi')
+  if(val.isAccessory)
+  {
+      productBox.innerHTML +=  newHtml;
+  }else{
+      cloth.innerHTML=  cloth.innerHTML + newHtml
+  }
+})
 
 })
 
